@@ -2,12 +2,7 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite';
 import vuetify from 'vite-plugin-vuetify';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-
-const __dirname = path.dirname(__filename);
+import { resolve } from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -15,7 +10,7 @@ export default defineConfig({
     vue(),
 
     VueI18nPlugin({
-      include: path.resolve(__dirname, './src/plugins/i18n/locale/**'),
+      include: resolve(__dirname, './src/plugins/i18n/locale/**'),
     }),
 
     vuetify({
@@ -24,7 +19,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src/'),
+      '@': resolve(__dirname, 'src/'),
     },
     extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
   },
@@ -36,11 +31,10 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: './src/package/index.js', // 入口文件
-      name: 'yf-json-schema-editor', // 库的名称（即暴露的全局变量名）
-      fileName: (format) => `yf-json-schema-editor.${format}.js`, // 输出文件名
+      entry: resolve(__dirname, 'src/package/index.ts'), // 入口文件
+      name: 'YFJsonSchemaEditor', // 库的名称（即暴露的全局变量名）
+      fileName: (format) => `YFJsonSchemaEditor.${format}.js`, // 输出文件名
     },
-    outDir: 'lib', // 输出目录
     rollupOptions: {
       // 确保外部化处理那些依赖（如 vue）
       external: ['vue'],
