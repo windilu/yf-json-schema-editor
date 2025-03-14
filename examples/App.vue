@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import YFJsonSchemaEditor from './packages/yf-json-schema-editor/YFJsonSchemaEditor.vue';
 
 const schema = ref({
   type: 'object',
@@ -72,7 +71,9 @@ const schema = ref({
 </script>
 
 <template>
-  <YFJsonSchemaEditor v-model="schema" />
+  <div>
+    <YFJsonSchemaEditor v-model="schema" />
+  </div>
 </template>
 
 <style scoped>

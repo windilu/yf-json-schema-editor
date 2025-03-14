@@ -6,7 +6,7 @@
           <template #prepend>
             <v-card-title>
               <v-icon icon="mdi-file-tree" />
-              {{ $t('noun.jsrn') }}
+              {{ t('noun.jsrn') }}
             </v-card-title>
           </template>
         </v-card-item>
@@ -41,7 +41,7 @@
           <v-select
             v-model="type"
             hide-details
-            :label="$t('noun.type')"
+            :label="t('noun.type')"
             width="120"
             :items="propertyTypes"
             density="compact"
@@ -63,7 +63,7 @@
           <v-tooltip
             v-if="isShowAddNodeBtn"
             location="top center"
-            :text="$t('noun.addChildNode')"
+            :text="t('noun.addChildNode')"
           >
             <template #activator="{ props }">
               <v-btn
@@ -79,7 +79,7 @@
           <v-tooltip
             v-if="!isRoot && !hideRemoveNodeBtn"
             location="top center"
-            :text="$t('noun.deleteNode')"
+            :text="t('noun.deleteNode')"
           >
             <template #activator="{ props }">
               <v-btn
@@ -92,7 +92,7 @@
             </template>
           </v-tooltip>
 
-          <v-tooltip location="top center" :text="$t('noun.setUp')">
+          <v-tooltip location="top center" :text="t('noun.setUp')">
             <template #activator="{ props }">
               <v-btn
                 v-bind="props"
@@ -131,8 +131,9 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { createReusableTemplate } from '@vueuse/core';
-import emitter, { TSchemaType } from '@/plugins/mitt';
-import { isArray, isObject } from '@/utils';
+import emitter, { TSchemaType } from './../../plugins/mitt';
+import { isArray, isObject } from './../../utils';
+import { t } from './../../plugins/i18n';
 
 const [DefineTemplate, ReuseTemplate] = createReusableTemplate();
 

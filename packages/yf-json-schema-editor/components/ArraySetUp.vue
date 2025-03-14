@@ -1,7 +1,7 @@
 <template>
   <v-card elevation="0">
     <v-card-text class="space-y-4">
-      <OutlinedContainer :label="$t('noun.basicAttributes')" style="padding: 0">
+      <OutlinedContainer :label="t('noun.basicAttributes')" style="padding: 0">
         <v-container>
           <v-row>
             <v-col v-for="item of defaultKeys" :key="item.key" cols="6">
@@ -49,11 +49,11 @@
         </v-container>
       </OutlinedContainer>
 
-      <OutlinedContainer :label="$t('noun.customProperties')">
+      <OutlinedContainer :label="t('noun.customProperties')">
         <CustomProperties v-model="schemaItem" :default-keys="dKeys" />
       </OutlinedContainer>
 
-      <OutlinedContainer :label="$t('noun.preview')">
+      <OutlinedContainer :label="t('noun.preview')">
         <div class="max-h-[240px] overflow-scroll">
           <VueJsonPretty :data="schemaItem" />
         </div>
@@ -62,11 +62,11 @@
 
     <v-card-actions class="flex justify-end">
       <v-btn @click="handleSubmit">
-        {{ $t('noun.submit') }}
+        {{ t('noun.submit') }}
       </v-btn>
 
       <v-btn @click="() => emits('close')">
-        {{ $t('noun.cancel') }}
+        {{ t('noun.cancel') }}
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -76,8 +76,8 @@
 import { ref } from 'vue';
 import VueJsonPretty from 'vue-json-pretty';
 import CustomProperties from './CustomProperties.vue';
-import { t } from '@/plugins/i18n';
-import { validationNonNegativeInteger } from '@/utils';
+import { t } from './../../plugins/i18n';
+import { validationNonNegativeInteger } from './../../utils';
 import OutlinedContainer from './OutlinedContainer.vue';
 
 const { source } = defineProps<{ source: Record<string, any> }>();

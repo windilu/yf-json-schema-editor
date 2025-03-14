@@ -13,7 +13,7 @@
     </v-container>
 
     <v-dialog v-model="dialog" class="w-3/5">
-      <v-card :title="$t('noun.setting')">
+      <v-card :title="t('noun.setting')">
         <StringSetUp
           v-if="setUpSchemaItem.type === 'string'"
           :source="setUpSchemaItem"
@@ -49,8 +49,9 @@
 <script setup lang="ts">
 import { ref, onBeforeUnmount, watchEffect } from 'vue';
 import YFJsonSchemaEditorItem from './components/YFJsonSchemaEditorItem.vue';
-import emitter, { TParames } from '@/plugins/mitt';
-import { isObject, isArray, createUniqueId } from '@/utils';
+import emitter, { TParames } from '../plugins/mitt';
+import { t } from '../plugins/i18n';
+import { isObject, isArray, createUniqueId } from './../utils';
 import StringSetUp from './components/StringSetUp.vue';
 import IntegerSetUp from './components/IntegerSetUp.vue';
 import ObjectSetUp from './components/ObjectSetUp.vue';

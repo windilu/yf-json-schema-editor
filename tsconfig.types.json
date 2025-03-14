@@ -6,7 +6,8 @@
     "outDir": "dist/types"
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.vue"
+    "packages/**/*.ts",
+    "packages/**/*.vue",
+    "packages/**/**/*.vue"
   ]
 }

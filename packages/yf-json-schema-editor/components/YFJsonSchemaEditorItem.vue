@@ -78,7 +78,7 @@
 <script setup lang="ts">
 import {} from 'vue';
 import SchemaItem from './SchemaItem.vue';
-import { isArray, isObject } from '@/utils';
+import { isArray, isObject } from './../../utils';
 
 const { label, isRoot, parentLabel, hideRemoveNodeBtn } = defineProps<{
   label?: any;

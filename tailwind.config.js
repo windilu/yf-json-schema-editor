@@ -1,9 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    './index.html',
-    './src/**/*.{js,ts,jsx,tsx,vue}',
-    './src/**/**/*.{js,ts,jsx,tsx,vue}',
+    './packages/yf-json-schema-editor/*.{js,ts,vue}',
+    './packages/yf-json-schema-editor/**/*.{js,ts,vue}',
+
+    './examples/**/*.{js,ts,jsx,tsx,vue}',
+    './examples/**/**/*.{js,ts,jsx,tsx,vue}',
+    './examples/index.html',
   ],
   theme: {
     extend: {},

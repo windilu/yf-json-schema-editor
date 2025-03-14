@@ -38,8 +38,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { t } from '@/plugins/i18n';
-import { createUniqueId } from '@/utils';
+import { t } from './../../plugins/i18n';
+import { createUniqueId } from './../../utils';
 
 type TItem = { key: string; value: string };
 
