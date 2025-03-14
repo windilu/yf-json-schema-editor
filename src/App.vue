@@ -1,30 +1,85 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from 'vue';
+import YFJsonSchemaEditor from './packages/yf-json-schema-editor/YFJsonSchemaEditor.vue';
+
+const schema = ref({
+  type: 'object',
+  properties: {
+    readingId: {
+      type: 'integer',
+    },
+    readTimeStamp: {
+      type: 'string',
+    },
+    tk: {
+      type: 'object',
+      properties: {
+        powerOff: {
+          type: 'integer',
+        },
+        batCharging: {
+          type: 'integer',
+        },
+        comType: {
+          type: 'integer',
+        },
+        bat: {
+          type: 'integer',
+          enum: [0],
+        },
+      },
+      required: ['powerOff', 'batCharging', 'comType', 'bat'],
+    },
+    wifiDataList: {
+      type: 'array',
+      items: {
+        type: 'object',
+        properties: {
+          bssid: {
+            type: 'string',
+            pattern: '^([0-9a-fA-F]{2}[:-]){5}([0-9a-fA-F]{2})$',
+          },
+          rssi: {
+            type: 'integer',
+          },
+          ufo: {
+            type: 'object',
+            properties: {
+              field_3_1: {
+                type: 'string',
+                title: '',
+              },
+            },
+          },
+        },
+        required: ['bssid', 'rssi'],
+      },
+    },
+    credate: {
+      type: 'array',
+      title: '创建日期',
+      items: [{ type: 'string' }, { type: 'integer' }],
+    },
+    alone: {
+      type: 'array',
+      items: {
+        type: 'string',
+      },
+    },
+  },
+  required: ['readingId', 'readTimeStamp', 'tk', 'wifiDataList'],
+});
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <YFJsonSchemaEditor v-model="schema" />
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+body {
+  padding: 0;
+  margin: 0;
+  /* 针对IE和Edge 隐藏滚动条  */
+  -ms-overflow-style: none;
 }
 </style>
