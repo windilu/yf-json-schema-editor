@@ -3,9 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/YFJsonSchemaEditor.es.js",
+      "require": "./dist/YFJsonSchemaEditor.umd.js"
+    }
+  },
   "scripts": {
-    "build": "build:types && vite build",
-    "build:types": "vue-tsc --project tsconfig.types.json"
+    "dev": "vite --port 3002",
+    "build": "vite build && npm run build:types",
+    "build:types": "vue-tsc --project tsconfig.types.json "
   },
   "dependencies": {
     "@intlify/unplugin-vue-i18n": "^6.0.3",

@@ -1,9 +1,8 @@
 import { App, Plugin } from 'vue';
 import YFJsonSchemaEditor from './yf-json-schema-editor/YFJsonSchemaEditor.vue';
+import vuetify from './plugins/vuetify';
 // taiwincss
 import './assets/style.css';
-
-import vuetify from './plugins/vuetify';
 
 const install: Plugin = {
   install(app: App) {

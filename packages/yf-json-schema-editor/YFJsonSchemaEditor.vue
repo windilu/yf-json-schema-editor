@@ -7,7 +7,9 @@
         </v-col>
 
         <v-col cols="4">
-          <VueJsonPretty :data="schema" />
+          <div class="w-full overflow-scroll">
+            <VueJsonPretty :data="schema" />
+          </div>
         </v-col>
       </v-row>
     </v-container>
