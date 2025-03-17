@@ -1,6 +1,7 @@
 {
   "name": "yf-json-schema-editor",
-  "private": true,
+  "author": "Ying Feng Lu",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "exports": {
@@ -8,6 +9,13 @@
       "import": "./dist/YFJsonSchemaEditor.es.js",
       "require": "./dist/YFJsonSchemaEditor.umd.js"
     }
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/windilu/yf-json-schema-editor.git"
   },
   "scripts": {
     "dev": "vite --port 3002",

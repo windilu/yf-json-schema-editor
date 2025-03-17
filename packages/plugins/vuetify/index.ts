@@ -2,7 +2,29 @@
 import 'vuetify/styles';
 import '@mdi/font/css/materialdesignicons.css';
 import { createVuetify } from 'vuetify';
-import * as components from 'vuetify/components';
+import {
+  VCard,
+  VCardActions,
+  VCardTitle,
+  VCardText,
+  VCheckbox,
+  VContainer,
+  VBtn,
+  VRow,
+  VCol,
+  VDivider,
+  VDialog,
+  VSelect,
+  VIcon,
+  VTextField,
+  VTooltip,
+  VExpansionPanels,
+  VExpansionPanel,
+  VExpansionPanelTitle,
+  VExpansionPanelText,
+  VCardItem,
+  VCombobox,
+} from 'vuetify/components';
 import * as directives from 'vuetify/directives';
 import { aliases, mdi } from 'vuetify/iconsets/mdi';
 
@@ -10,7 +32,29 @@ import { aliases, mdi } from 'vuetify/iconsets/mdi';
 import { ja, zhHans, en, zhHant } from 'vuetify/locale';
 
 const vuetify = createVuetify({
-  components,
+  components: {
+    VCard,
+    VCardActions,
+    VCardTitle,
+    VCardText,
+    VCheckbox,
+    VContainer,
+    VBtn,
+    VRow,
+    VCol,
+    VDivider,
+    VDialog,
+    VSelect,
+    VIcon,
+    VTextField,
+    VTooltip,
+    VExpansionPanels,
+    VExpansionPanel,
+    VExpansionPanelTitle,
+    VExpansionPanelText,
+    VCardItem,
+    VCombobox,
+  },
   directives,
   defaults: {
     global: { reset: false },
