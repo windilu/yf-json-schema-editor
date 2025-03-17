@@ -43,6 +43,13 @@
           @close="dialog = false"
           @submit="handleSetUpSubmit"
         />
+
+        <NumberSetup
+          v-else="setUpSchemaItem.type === 'array'"
+          :source="setUpSchemaItem"
+          @close="dialog = false"
+          @submit="handleSetUpSubmit"
+        />
       </v-card>
     </v-dialog>
   </div>

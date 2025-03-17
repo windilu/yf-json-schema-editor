@@ -2,7 +2,7 @@
   "name": "yf-json-schema-editor",
   "author": "Ying Feng Lu",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "exports": {
     ".": {

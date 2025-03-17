@@ -12,4 +12,3 @@ const install: Plugin = {
 };
 
 export default install;
-export { YFJsonSchemaEditor };
